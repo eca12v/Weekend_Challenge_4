@@ -7,6 +7,7 @@ $(document).ready(function(){
 });
 //posts inputted task then clears input field and updates display
 function postTask(){
+  event.preventDefault();
   var task = $('#taskIn').val();
   var taskObject = {
     'task': task,
@@ -49,6 +50,7 @@ function getTasks(){
 }
 //starts a confirm message when delete button is clicked and deletes task from dom and database on confirm
 function deleteTask(){
+  event.preventDefault();
   var askDelete = confirm('Are you sure you want to delete this?');
   if(askDelete === true){
     var x = $(this).parent().attr('id');
@@ -69,6 +71,7 @@ function deleteTask(){
 //toggles between true and false for task being completed
 //this is a little buggy and doesn't work consistently, not sure why
 function completeToggle(){
+  event.preventDefault();
   var x = $(this).parent().attr('id');
   var toggleObject = {
     'completeID': x
