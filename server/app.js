@@ -17,7 +17,7 @@ app.get('/', function(req, res){
   console.log('in base url');
   res.sendFile(path.resolve('views/index.html'));
 });
-//post call when input on DOM is submitted
+//post call when input on DOM is submitted, INSERTS the task, 'false' into completed column, and the current date and time
 app.post('/postTask', urlencodedParser, function(req, res){
   console.log('in /postTask, task is: ' + req.body.task);
   pg.connect(connectionString, function(err, client, done){
