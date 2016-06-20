@@ -5,7 +5,7 @@ $(document).ready(function(){
   $(document).on('click', '.delete', deleteTask);
   $(document).on('click', '.completed', completeToggle);
 });
-
+//posts inputted task then clears input field and updates display
 function postTask(){
   var task = $('#taskIn').val();
   var taskObject = {
@@ -20,7 +20,7 @@ function postTask(){
   $('#taskIn').val('');
   getTasks();
 }
-
+//function for displaying tasks on the DOM
 function displayTasks(tasks){
   $('#uncompletedContainer').empty();
   $('#completedContatiner').empty();
@@ -37,7 +37,7 @@ function displayTasks(tasks){
     }
   }
 }
-
+//gets the tasks from the database then sends them to the display function
 function getTasks(){
   $.ajax({
     type: 'GET',
@@ -47,7 +47,7 @@ function getTasks(){
     }
   });
 }
-
+//starts a confirm message when delete button is clicked and deletes task from dom and database on confirm
 function deleteTask(){
   var askDelete = confirm('Are you sure you want to delete this?');
   if(askDelete === true){
@@ -66,7 +66,8 @@ function deleteTask(){
   }
   else{return;}
 }
-
+//toggles between true and false for task being completed
+//this is a little buggy and doesn't work consistently, not sure why
 function completeToggle(){
   var x = $(this).parent().attr('id');
   var toggleObject = {
