@@ -49,18 +49,22 @@ function getTasks(){
 }
 
 function deleteTask(){
-  var x = $(this).parent().attr('id');
-  console.log(x);
-  var inObject = {
-    'id': x
-  };
-  console.log(inObject.id);
-  $.ajax({
-    type: 'POST',
-    url: '/deletePost',
-    data: inObject
-  });
-  $(this).parent().remove();
+  var askDelete = confirm('Are you sure you want to delete this?');
+  if(askDelete === true){
+    var x = $(this).parent().attr('id');
+    console.log(x);
+    var inObject = {
+      'id': x
+    };
+    console.log(inObject.id);
+    $.ajax({
+      type: 'POST',
+      url: '/deletePost',
+      data: inObject
+    });
+    $(this).parent().remove();
+  }
+  else{return;}
 }
 
 function completeToggle(){
