@@ -1,0 +1,34 @@
+#uncompletedOuter, #completedOuter {
+  width: 500px;
+  border-radius: 25px
+}
+#completedOuter {
+  float: right;
+  background-color: blue;
+}
+#uncompletedOuter {
+  float: left;
+  background-color: red;
+}
+#inputDiv {
+  margin: 30px auto 50px auto;
+}
+#taskIn, #submit {
+  opacity: 0.75;
+}
+#inputInnerDiv {
+  display: inline-block;
+  margin-left: 40%;
+  background-color: #66ffff;
+  border-radius: 12px;
+  border: 5px solid black;
+  padding: 4px;
+}
+h3 {
+  text-align: center;
+}
+.taskdiv {
+  border: 5px solid black;
+  margin: 10px;
+  border-radius: 8px
+}
